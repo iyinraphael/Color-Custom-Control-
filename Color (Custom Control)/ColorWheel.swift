@@ -11,10 +11,19 @@ import UIKit
 class ColorWheel: UIControl {
     //UIControl implements target pattern listner
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        clipsToBounds = true 
+        let radius = frame.width / 2.0
+        layer.cornerRadius = radius
+        layer.borderWidth = 1.0
+        layer.borderColor = UIColor.black.cgColor
+    }
+    
     //draw_rect helps draw any view
     override func draw(_ rect: CGRect) {
         
-        let size = bounds.size
         let center = CGPoint(x: bounds.midX, y: bounds.midY)
         
         for y in stride(from: 0, to: bounds.maxY, by: 1) {
