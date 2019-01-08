@@ -12,6 +12,7 @@
 		EB3087F621E4D4DF00852E18 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB3087F421E4D4DF00852E18 /* Main.storyboard */; };
 		EB3087F821E4D4E200852E18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB3087F721E4D4E200852E18 /* Assets.xcassets */; };
 		EB3087FB21E4D4E200852E18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB3087F921E4D4E200852E18 /* LaunchScreen.storyboard */; };
+		EB30880321E4D60E00852E18 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB30880221E4D60E00852E18 /* Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		EB3087F721E4D4E200852E18 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB3087FA21E4D4E200852E18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EB3087FC21E4D4E200852E18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB30880221E4D60E00852E18 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				EB3087F721E4D4E200852E18 /* Assets.xcassets */,
 				EB3087F921E4D4E200852E18 /* LaunchScreen.storyboard */,
 				EB3087FC21E4D4E200852E18 /* Info.plist */,
+				EB30880221E4D60E00852E18 /* Color.swift */,
 			);
 			path = "Color (Custom Control)";
 			sourceTree = "<group>";
@@ -137,6 +140,7 @@
 			files = (
 				EB3087F321E4D4DF00852E18 /* ViewController.swift in Sources */,
 				EB3087F121E4D4DF00852E18 /* AppDelegate.swift in Sources */,
+				EB30880321E4D60E00852E18 /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
