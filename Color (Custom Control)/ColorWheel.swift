@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ColorWheel: UIControl {
+
+@IBDesignable class ColorWheel: UIControl {
     //UIControl implements target pattern listner
     
     override func layoutSubviews() {
@@ -24,16 +25,11 @@ class ColorWheel: UIControl {
     //draw_rect helps draw any view
     override func draw(_ rect: CGRect) {
         
-        let center = CGPoint(x: bounds.midX, y: bounds.midY)
-        
         for y in stride(from: 0, to: bounds.maxY, by: 1) {
             
             for  x in stride(from: 0, to: bounds.maxX, by: 1) {
-                let dy = y - center.y
-                let dx = x - center.x
-                let offset = CGSize(width: dx / center.x, height: dy / center.y)
-                let (hue, saturation) = Color.getHueSaturation(at: offset )
-                let color =  UIColor(hue: hue, saturation: saturation, brightness: 0.8, alpha: 1.0)
+                
+                let color =  self.color(for: CGPoint(x: x, y: y))
                 let pixel = CGRect(x: x, y: y, width: 1, height: 1)
                 
                 color.set()
@@ -41,6 +37,24 @@ class ColorWheel: UIControl {
                 UIRectFill(pixel)
             }
         }
+    }
+    
+    var color: UIColor = .white
+    
+    override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+        let touchPoint = touch.location(in: self)
+        color = color(for: touchPoint)
+        sendActions(for: [.touchDown, .valueChanged])
+        return true
+    }
+    
+    @inline(__always) private func color(for location: CGPoint) -> UIColor {
+        let center = CGPoint(x: bounds.midX, y: bounds.midY)
+        let dy = location.y - center.y
+        let dx = location.x - center.x
+        let offset = CGSize(width: dx / center.x, height: dy / center.y)
+        let (hue, saturation) = Color.getHueSaturation(at: offset )
+        return  UIColor(hue: hue, saturation: saturation, brightness: 0.8, alpha: 1.0)
     }
     
 }
